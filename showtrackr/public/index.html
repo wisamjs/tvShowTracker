@@ -4,7 +4,7 @@
 	<!--enables HTML5 History API in Angular-->
 	<base href="/">
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, intial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ShowTrackr</title>
 	<link rel="icon" type="image/png" href="favicon.png">
 	<link href="stylesheets/style.css" rel="stylesheet">
@@ -36,6 +36,7 @@
 	<div ng-view></div>
 
 	<!-- Angular and other resources -->
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>-->
 	<script src="vendor/angular.js"></script>
 	<script src="vendor/angular-strap.js"></script>
 	<script src="vendor/angular-strap.tpl.js"></script>
@@ -43,11 +44,14 @@
 	<script src="vendor/angular-resource.js"></script>
 	<script src="vendor/angular-route.js"></script>
 	<script src="vendor/angular-cookies.js"></script>
-	<script src="vendor/moment.min.js"></script>
+	<script src="vendor/moment.js"></script>
+	<script src="app.js"></script>
 
 	<!-- controllers -->
 	<script src="controllers/main.js"></script>
 
-	<script src="app.js"></script>
+	<!-- services -->
+	<script src="services/show.js"></script>
+
 </body>
 </html>

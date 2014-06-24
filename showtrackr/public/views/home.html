@@ -1,6 +1,8 @@
 <div class="jumbotron">
   <div class="container">
     <ul class="alphabet">
+      <!-- below line expects array alphabets from the controller
+       Then we are filtering by the character.-->
       <li ng-repeat="char in alphabet">
         <span ng-click="filterByAlphabet(char)">{{char}}</span>
       </li>
