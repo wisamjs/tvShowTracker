@@ -68,6 +68,12 @@ var bodyParser = require('body-parser');
 
 
 var app = express();
+app.set('port',process.env.PORT || 3000);
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/shows', function(req, res, next) {
   var query = Show.find();
@@ -103,7 +109,6 @@ Below code will allow users to refresh page
 and not get weird "CANNOT GET /Add" error
 common problem with HTML5 pushState on the client-side.
 */
-/*Currently causing redirect loop errors */
 app.get('*', function(req, res) {
   res.redirect('/#' + req.originalUrl);
 });
@@ -115,12 +120,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.set('port',process.env.PORT || 3000);
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 app.listen(app.get('port'), function() {
