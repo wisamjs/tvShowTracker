@@ -23,4 +23,4 @@ var showSchema = new mongoose.Schema({
 	    overview: String
 		}]
 	});
-var Show = mongoose.model('Show', showSchema);
+module.exports = mongoose.model('Show', showSchema);

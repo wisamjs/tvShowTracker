@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var bcrypt = require('bcryptjs');
 
 var userSchema = new mongoose.Schema({
 	email: { type: String, unique: true },
@@ -26,4 +27,4 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
   });
 };
 
-var User = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);
